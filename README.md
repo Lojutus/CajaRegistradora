@@ -38,4 +38,27 @@ El programa incluye una interfaz gráfica intuitiva desarrollada con Tkinter, qu
 
 Con esta interfaz, los usuarios pueden administrar sus productos de manera eficiente y sin complicaciones.
 
+👥 Créditos
+
+Desarrollado por el equipo:
+
+Samuel Mejia Chavrriaga
+
+🏷️ @im._samuel
+
+✉️ samuel1022007@gmail.com
+
+Jose David Hurtado Gomez
+
+🏷️ @lojutus_
+
+✉️ lojutuselmejor@gmail.com
+
+Oscar Andre Rengifo Bustos
+
+🏷️ @theroscarg
+
+
+
+
 
