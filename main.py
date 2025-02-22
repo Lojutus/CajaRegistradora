@@ -1,3 +1,6 @@
+#Samuel Mejia Chavarriaga / samuel1022007@gmail.com
+#Jose David Hurtado / lojutuselmejor@gmail.com
+#Oscar Andres Rengifo Bustos / 
 Carrito = []  #MATRIZ CARRITO
 
 #FUNCIONES
