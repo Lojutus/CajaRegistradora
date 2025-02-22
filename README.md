@@ -25,10 +25,15 @@ El programa incluye una interfaz gráfica intuitiva desarrollada con Tkinter, qu
 📌 Características principales:
 
 ✅ Interfaz interactiva y responsiva que se adapta al tamaño de la ventana.
+
 ✅ Animaciones suaves al agregar, modificar o eliminar productos.
+
 ✅ Emojis para hacer la experiencia más amigable y visualmente atractiva.
+
 ✅ Cálculo automático del total y aplicación de descuentos si se agregan más de 10 unidades de productos.
+
 ✅ Mensajes emergentes que informan sobre errores o acciones exitosas.
+
 ✅ Diseño con Treeview que organiza los productos de manera clara.
 
 Con esta interfaz, los usuarios pueden administrar sus productos de manera eficiente y sin complicaciones.
