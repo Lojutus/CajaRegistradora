@@ -2,11 +2,22 @@
 #Jose David Hurtado / lojutuselmejor@gmail.com
 #Oscar Andres Rengifo Bustos / 
 Carrito = []  #MATRIZ CARRITO
+"""
+Cambios necesesarios:
+0 : Con el Codigo de varras identificar los productos 
+1 : Colocar un json que contenga los productos que alguna vez fueron agregados ( Que contenga  los precios el margen de ganancia y el inventario), un inventario
+2 : Colocar un archivo json que contenga el historial de productos vendidos que contenga el total de ventas y su precio acumulado, las ganancias 
+3 : Poder restar productos ( no fueron comprados pero si consumidos, es decir se le resta el precio sin la ganancia a la ganancia total)
+4 : Poder hacer un recibo que calcule los precios automaticamente y le reste de inventario y le sume a las ganancias y costos ( asi como un recibo )
 
+
+
+
+"""
 #FUNCIONES
 def Agregar_Producto():
   while (True):
-    Producto = []  #PRODUCTO = ARRAY CON 3 VLAORES
+    Producto = []  #PRODUCTO = ARRAY CON 3 VALORES
     Precio = 0
     cantidad = 0
 
