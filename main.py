@@ -1,11 +1,11 @@
-#Samuel Mejia Chavarriaga / samuel1022007@gmail.com
+
 #Jose David Hurtado / lojutuselmejor@gmail.com
-#Oscar Andres Rengifo Bustos / 
+
 Carrito = []  #MATRIZ CARRITO
 """
 Cambios necesesarios:
-0 : Con el Codigo de varras identificar los productos 
-1 : Colocar un json que contenga los productos que alguna vez fueron agregados ( Que contenga  los precios el margen de ganancia y el inventario), un inventario
+0 : Con el Codigo de varras identificar los productos # Completado (mediadamente , funciona pero no se conecta a ninguna API )
+1 : Colocar un json que contenga los productos que alguna vez fueron agregados ( Que contenga  los precios el margen de ganancia y el inventario), un inventario # HECHO
 2 : Colocar un archivo json que contenga el historial de productos vendidos que contenga el total de ventas y su precio acumulado, las ganancias 
 3 : Poder restar productos ( no fueron comprados pero si consumidos, es decir se le resta el precio sin la ganancia a la ganancia total)
 4 : Poder hacer un recibo que calcule los precios automaticamente y le reste de inventario y le sume a las ganancias y costos ( asi como un recibo )
@@ -70,6 +70,7 @@ def Agregar_Producto():
       break
 
 
+
 def Quitar_Producto():
 
   producto_a_eliminar = input("¿Que producto desea quitar?")
@@ -79,7 +80,6 @@ def Quitar_Producto():
       Carrito.pop(i)  # Elimina la sublista encontrada
       return True  # Retorna True si se eliminó
   return False  # Retorna False si no se encontró
-
 
 def Cambiar_Producto(nombre=None):
   if nombre is None:
