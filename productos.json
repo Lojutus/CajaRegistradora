@@ -1,3 +1,32 @@
 [
-    
+    {
+        "Codigo": "000",
+        "Precio de compra": "50.0",
+        "Ganancia": "40.0",
+        "Nombre": "coca"
+    },
+    {
+        "Codigo": "0",
+        "Precio de compra": "60.0",
+        "Ganancia": "40.0",
+        "Nombre": "agua"
+    },
+    {
+        "Codigo": "0000",
+        "Precio de compra": "70.0",
+        "Ganancia": "30.0",
+        "Nombre": "ll"
+    },
+    {
+        "Codigo": "00000",
+        "Precio de compra": "80.0",
+        "Ganancia": "20.0",
+        "Nombre": "braaa"
+    },
+    {
+        "Codigo": "00",
+        "Precio de compra": "90.0",
+        "Ganancia": "10.0",
+        "Nombre": "chicle"
+    }
 ]

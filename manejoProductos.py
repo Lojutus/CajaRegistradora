@@ -1,7 +1,7 @@
 import json
 import os
 
-def buscarProducto(productoE):
+def buscarExistenciaProducto(productoE):
     try:
         productoE = str(productoE)
         with open("productos.json", "r", encoding='utf-8') as archivo:
@@ -15,10 +15,20 @@ def buscarProducto(productoE):
         return False 
     except FileNotFoundError:
         return False
+def buscarInformacionProducto(productoE):
+    try:
+        productoE = str(productoE)
+        with open("productos.json", "r", encoding='utf-8') as archivo:
+            productos = json.load(archivo)
+        for producto in productos:
+            if producto["Codigo"] == productoE:
+                return producto
+    except FileNotFoundError:
+                return False
 def Cambiar_Producto(nombre=None):
     if nombre is None:
             nombre = input("Ingrese el codigo del producto a modificar: ").strip()
-    if buscarProducto(nombre):
+    if buscarExistenciaProducto(nombre):
 
             with open("productos.json", "r", encoding='utf-8') as archivo:
                 productos = json.load(archivo)
@@ -57,7 +67,7 @@ def Agregar_Producto():
 
     #Se solicitan los valores de los productos al usuario
     Producto["Codigo"] = input("Ingrese el codigo de barras del producto")
-    producto_existe = buscarProducto(Producto["Codigo"])
+    producto_existe = buscarExistenciaProducto(Producto["Codigo"])
      # Devuelve True si el elemento existe en el diccionario, False de lo contrario.
     if producto_existe == False:
         while True:
@@ -75,10 +85,10 @@ def Agregar_Producto():
         Producto["Precio de compra"] = str(precioC)
         Producto["Ganancia"] = str(Ganancia)
         Producto["Nombre"] = str(nombreP)
-        
+        print("Item listo para agregar")  
     else:
       print(
-          "El producto ya existe en el carrito , ¿Desea modificar el producto?"
+          "El producto ya existe en el Inventario , ¿Desea modificar el producto?"
       )
       print("1. Si")
 
@@ -111,3 +121,4 @@ def Agregar_Producto():
     else:
       print("la opcion ingresada no es válida")
       break
+

@@ -2,6 +2,7 @@
 #Jose David Hurtado / lojutuselmejor@gmail.com
 
 Carrito = []  #MATRIZ CARRITO
+from manejoProductos import * 
 """
 Cambios necesesarios:
 0 : Con el Codigo de varras identificar los productos # Completado (mediadamente , funciona pero no se conecta a ninguna API )
@@ -15,53 +16,38 @@ Cambios necesesarios:
 
 """
 #FUNCIONES
-def Agregar_Producto():
+def AgregarProducto():
   while (True):
     Producto = []  #PRODUCTO = ARRAY CON 3 VALORES
-    Precio = 0
-    cantidad = 0
+    
 
     #Se solicitan los valores de los productos al usuario
-    Producto.append(str(input("Ingrese el nombre del producto: ")))
-
-    producto_existe = any(
-        Producto == item[0] for item in Carrito
-    )  # Devuelve True si el elemento existe en la lista, False de lo contrario.
-    if producto_existe == False:
-      Precio = float(input("Ingrese el precio del producto: "))
-      while (Precio <= 0):  #COMPRUEBA QUE EL PRECIO SEA POSITIVO
-        print("El valor del producto no puede ser negativo")
-        Precio = float(input("Ingrese el precio del producto: "))
-
-      Producto.append(Precio)
-      cantidad = int(input("Ingrese la cantidad del producto: "))
-      while (cantidad < 0):
-        print("La cantidad del producto no puede ser negativa")
-        cantidad = int(input("Ingrese la cantidad del producto: "))
-      Producto.append(cantidad)
-
+    
+    codigo = input("Ingrese el codigo del producto: ")
+    
+    if(buscarExistenciaProducto(codigo)):
+      Producto.append(buscarInformacionProducto(codigo))
     else:
-      print(
-          "El producto ya existe en el carrito , ¿Desea modificar el producto?"
-      )
-      print("1. Si")
+        
+        respuesta = input("El articulo no existe en el inventario, desea agregarlo?, o prefiere ignorarlo")
+        print("1. Si")
 
-      print("2. No")
-      if (int(input()) == 1):
-        Cambiar_Producto()
-      else:
-        print("El producto no se agregara al carrito")
-        break
+        print("2. No")
+        if (int(input()) == 1):
+          Agregar_Producto()
+         
+        else:
+          print("El producto no se agregara al carrito")
+          break
 
-    Carrito.append(
-        Producto)  # AÑADIR PRODUCTO A CARRITO (LO CONVIERTE EN UNA MATRIZ)
+    Carrito.append(Producto)  # AÑADIR PRODUCTO A CARRITO (LO CONVIERTE EN UNA MATRIZ)
     print("Producto agregado")
     print("¿Desea agregar otro producto?")
     print("1. Si")
     print("2. No")
     Opcion = (int(input("Ingrese una opcion: ")))
     if (Opcion == 1):
-      Agregar_Producto()
+      AgregarProducto()
       break
     elif Opcion == 2:
       break
@@ -131,13 +117,14 @@ def Ver_Carrito():
 
   total = 0
   for producto in Carrito:
-    nombre = producto[0]
-    precio = producto[1]
-    cantidad = int(producto[2])
-    subtotal = precio * cantidad
+    data = producto[0]
+    
+    nombre = data["Nombre"]
+    precio = float(data["Precio de compra"]) + float(data["Ganancia"])
+    subtotal = precio 
     total += subtotal
     print(
-        f"📌 {nombre:<15} | 💲{precio:>5} x {cantidad:>2} unidades | 🏷️ Subtotal: ${subtotal}"
+        f"📌 {nombre:<15} | 💲{precio:>5}  | 🏷️ Subtotal: ${subtotal}"
     )
 
   print("=" * 35)
@@ -154,23 +141,43 @@ def Generar_Ticket():
   print("=" * 35)
 
   total = 0
-  cantidad_total = 0
-
+  gananciaVenta= 0
+  try:
+      with open("dinero.json", "r", encoding='utf-8') as archivo:
+            historialVentas = json.load(archivo)
+  except:
+      historialVentas = []
+  Productos = []
+  historial = {}
   for producto in Carrito:
-    nombre, precio, cantidad = producto
-    subtotal = precio * cantidad
-    cantidad_total += cantidad
+    data = producto[0]
+    
+    nombre = data["Nombre"]
+    precio = float(data["Precio de compra"]) + float(data["Ganancia"])
+    ganancia = float(data["Ganancia"])
+    subtotal = precio 
     total += subtotal
-    print(
-        f"📌 {nombre:<15} | {cantidad:>2} x 💲{precio:>5.2f} | 🏷️ Subtotal: ${subtotal:>7.2f}"
-    )
+    gananciaVenta += ganancia
 
-  # Aplicar descuento si hay más de 10 unidades en total
-  if cantidad_total > 10:
-    descuento = total * 0.10
-    total -= descuento
-    print("\n🎉 Descuento aplicado: -💰${:.2f} (10% por más de 10 unidades)".
-          format(descuento))
+    #GUARDAR EL ITEM EN UN DICCIONARIO QUE QUEDE MAS FACIL MANIPULARLO
+    acumuladorProductos = {}
+    acumuladorProductos["Nombre Producto"] = str(nombre) 
+    acumuladorProductos["Precio de Compra"] = str(data["Precio de compra"])
+    acumuladorProductos["Ganancia"] = str(ganancia)
+    Productos.append(acumuladorProductos)
+  historial["Ganancia Venta"] = str(gananciaVenta)
+  historial["Productos"] = Productos
+  historial["Total Venta"] = total
+  historialVentas.append(historial)
+          
+  try:  
+        # Guardar nuevamente en el archivo
+        with open("dinero.json", "w", encoding="utf-8") as f:
+            json.dump(historialVentas, f, indent=4, ensure_ascii=False)
+  except FileNotFoundError:
+        print("El producto no se agrego al historial, archivo para guardar  no existe ")
+
+ 
 
   print("=" * 35)
   print(f"🧾 TOTAL A PAGAR: 💰 ${total:.2f}")
@@ -202,7 +209,7 @@ while True:
   #Menu Principal
   if opcion == "1":
     try: 
-      Agregar_Producto()
+      AgregarProducto()
     except:
       print("Errores en el ingreso de datos, Intente de nuevo")
   elif opcion == "2":
@@ -211,10 +218,9 @@ while True:
     except:
       print("Errores en el ingreso de datos, Intente de nuevo")
   elif opcion == "3":
-    try: 
+    
       Ver_Carrito()
-    except:
-      print("Errores en el ingreso de datos, Intente de nuevo")
+    
   elif opcion == "4":
     try:
       Salir()
