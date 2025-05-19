@@ -14,5 +14,73 @@
             }
         ],
         "Total Venta": 190.0
+    },
+    {
+        "Ganancia Venta": "10.0",
+        "Productos": [
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            }
+        ],
+        "Total Venta": 100.0
+    },
+    {
+        "Ganancia Venta": "10.0",
+        "Productos": [
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            }
+        ],
+        "Total Venta": 100.0
+    },
+    {
+        "Ganancia Venta": "0",
+        "Productos": [],
+        "Total Venta": 0
+    },
+    {
+        "Ganancia Venta": "70.0",
+        "Productos": [
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            }
+        ],
+        "Total Venta": 700.0
     }
 ]

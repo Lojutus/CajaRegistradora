@@ -16,15 +16,18 @@ def buscarExistenciaProducto(productoE):
     except FileNotFoundError:
         return False
 def buscarInformacionProducto(productoE):
-    try:
-        productoE = str(productoE)
-        with open("productos.json", "r", encoding='utf-8') as archivo:
-            productos = json.load(archivo)
-        for producto in productos:
-            if producto["Codigo"] == productoE:
-                return producto
-    except FileNotFoundError:
-                return False
+    if buscarExistenciaProducto(productoE):
+        try:
+            productoE = str(productoE)
+            with open("productos.json", "r", encoding='utf-8') as archivo:
+                productos = json.load(archivo)
+            for producto in productos:
+                if producto["Codigo"] == productoE:
+                    return producto
+        except FileNotFoundError:
+                    return False
+    else:
+        return False
 def Cambiar_Producto(nombre=None):
     if nombre is None:
             nombre = input("Ingrese el codigo del producto a modificar: ").strip()
