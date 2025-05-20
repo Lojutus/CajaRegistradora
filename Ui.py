@@ -155,7 +155,7 @@ class FacturacionUI(tk.Tk):
         self.entry_fecha_fin = ttk.Entry(bottom_frame, width=12)
         self.entry_fecha_fin.pack(side=tk.LEFT)
 
-        resumen_btn = ttk.Button(bottom_frame, text="GENERAR RESUMEN POR FECHA")
+        resumen_btn = ttk.Button(bottom_frame, text="GENERAR RESUMEN POR FECHA", command=self.generar_resumen_por_fecha)
         resumen_btn.pack(side=tk.RIGHT, padx=10)
         
         
@@ -277,6 +277,58 @@ class FacturacionUI(tk.Tk):
             print("Error al leer el archivo JSON.")
         except IndexError:
             print(f"No existe la transacción con índice {idx}.")
+    def generar_resumen_por_fecha(self):
+        # 1) Leer fechas de los Entry
+        inicio = self.entry_fecha_inicio.get().strip()
+        fin    = self.entry_fecha_fin.get().strip()
+
+        # 2) Llamar a la función de análisis
+        resumen = analizar_ventas_por_fecha(inicio, fin)
+
+        # 3) Si no hay datos, avisar al usuario
+        if not resumen:
+            messagebox.showwarning(
+                "Resumen vacío",
+                "No se encontraron ventas en ese rango de fechas.\n"
+                "Verifica el formato YYYY-MM-DD e inténtalo de nuevo."
+            )
+            return
+
+        # 4) Agregar todos los totales y productos en un solo “resumen global”
+        total_ganancias = 0.0
+        total_ventas_netas = 0.0
+        contador_prod = Counter()
+
+        for fecha, datos in resumen.items():
+            total_ganancias    += float(datos.get("ganancias_totales", 0))
+            total_ventas_netas += float(datos.get("ventas_netas_totales", 0))
+
+            # datos["cantidad_por_producto"] es un dict {nombre: cantidad}
+            for nombre, cant in datos.get("cantidad_por_producto", {}).items():
+                contador_prod[nombre] += int(cant)
+
+        # 5) Actualizar los Labels de la derecha
+        self.lbl_ganancia.config(text=f"Ganancia: ${total_ganancias:.2f}")
+        self.lbl_venta_total.config(text=f"Venta total: ${total_ventas_netas:.2f}")
+        self.lbl_fecha.config(text=f"Resumen {inicio} → {fin}")
+
+        # 6) Mostrar el detalle de productos en el Text
+        self.lista_productos_vendidos.config(state="normal")
+        self.lista_productos_vendidos.delete("1.0", tk.END)
+
+        total_items = sum(contador_prod.values())
+        self.lista_productos_vendidos.insert(
+            tk.END,
+            f"Total de productos vendidos: {total_items}\n\n"
+        )
+        self.lista_productos_vendidos.insert(tk.END, "Desglose por producto:\n")
+        for nombre, cant in contador_prod.items():
+            self.lista_productos_vendidos.insert(
+                tk.END,
+                f"  • {nombre}: {cant} unidad(es)\n"
+            )
+
+        self.lista_productos_vendidos.config(state="disabled")
 
 if __name__ == "__main__":
     app = FacturacionUI()
