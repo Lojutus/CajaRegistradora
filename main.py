@@ -1,7 +1,6 @@
 
 #Jose David Hurtado / lojutuselmejor@gmail.com
-
-Carrito = []  #MATRIZ CARRITO
+from datetime import datetime
 from manejoProductos import * 
 """
 Cambios necesesarios:
@@ -15,7 +14,15 @@ Cambios necesesarios:
 
 
 """
+
+Carrito = [] #Lista con los productos
 #FUNCIONES
+def conseguirFecha():
+  now = datetime.now()
+  now_sin_segundos = now.replace(second=0, microsecond=0)
+  return now_sin_segundos
+ 
+
 def AgregarProducto(codigo):
     
     Producto = []  #PRODUCTO = diccionario CON 4 VALORES  
@@ -67,6 +74,7 @@ def Generar_Ticket():
   historial["Ganancia Venta"] = str(gananciaVenta)
   historial["Productos"] = Productos
   historial["Total Venta"] = total
+  historial["Fecha"] = str(conseguirFecha())
   historialVentas.append(historial)
           
   try:  
