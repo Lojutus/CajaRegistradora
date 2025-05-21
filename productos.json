@@ -46,5 +46,11 @@
         "Precio de compra": "100.0",
         "Ganancia": "20.0",
         "Nombre": "JET"
+    },
+    {
+        "Codigo": 123,
+        "Precio de compra": "100",
+        "Ganancia": "20",
+        "Nombre": "Producto A"
     }
 ]

@@ -1,0 +1,270 @@
+[
+    {
+        "Ganancia Venta": "40.0",
+        "Productos": [
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            }
+        ],
+        "Total Venta": 400.0,
+        "Fecha": "2025-05-20 15:13:00"
+    },
+    {
+        "Ganancia Venta": "10.0",
+        "Productos": [
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            }
+        ],
+        "Total Venta": 100.0,
+        "Fecha": "2025-05-20 15:15:00"
+    },
+    {
+        "Ganancia Venta": "50.0",
+        "Productos": [
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            }
+        ],
+        "Total Venta": 500.0,
+        "Fecha": "2025-05-20 16:04:00"
+    },
+    {
+        "Ganancia Venta": "80.0",
+        "Productos": [
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            }
+        ],
+        "Total Venta": 800.0,
+        "Fecha": "2025-05-20 16:20:00"
+    },
+    {
+        "Ganancia Venta": "30.0",
+        "Productos": [
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            }
+        ],
+        "Total Venta": 300.0,
+        "Fecha": "2025-05-20 16:23:00"
+    },
+    {
+        "Ganancia Venta": "10.0",
+        "Productos": [
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            }
+        ],
+        "Total Venta": 100.0,
+        "Fecha": "2025-05-20 16:25:00"
+    },
+    {
+        "Ganancia Venta": "50.0",
+        "Productos": [
+            {
+                "Nombre Producto": "coca",
+                "Precio de Compra": "50.0",
+                "Ganancia": "40.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            }
+        ],
+        "Total Venta": 190.0,
+        "Fecha": "2025-05-20 16:51:00"
+    },
+    {
+        "Ganancia Venta": "40.0",
+        "Productos": [
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            }
+        ],
+        "Total Venta": 400.0,
+        "Fecha": "2025-05-21 10:05:00"
+    },
+    {
+        "Ganancia Venta": "250.0",
+        "Productos": [
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            }
+        ],
+        "Total Venta": 1540.0,
+        "Fecha": "2025-05-21 12:22:00"
+    }
+]
