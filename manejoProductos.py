@@ -28,7 +28,7 @@ def buscarInformacionProducto(productoE):
                     return False
     else:
         return False
-def Cambiar_Producto(nombre=None):
+def Cambiar_Producto( nombre = None):
     if nombre is None:
             nombre = input("Ingrese el codigo del producto a modificar: ").strip()
     if buscarExistenciaProducto(nombre):
@@ -60,45 +60,24 @@ def Cambiar_Producto(nombre=None):
                             
     else:
         print("El producto no existe")
-def Agregar_Producto():
-  while (True):
+def Agregar_Producto(Codigo,precioC, Ganancia, nombreP):
+  
     Producto = {}  #PRODUCTO = diccionario con 5 valores 
     Precio = 0
     cantidad = 0
 
     #Se solicitan los valores de los productos al usuario
-    Producto["Codigo"] = input("Ingrese el codigo de barras del producto")
+    Producto["Codigo"] = Codigo
     producto_existe = buscarExistenciaProducto(Producto["Codigo"])
      # Devuelve True si el elemento existe en el diccionario, False de lo contrario.
     if producto_existe == False:
-        while True:
-            try:
-                precioC = float(input("Ingrese el precio de compra : "))
-                Ganancia = float(input("Ingrese la ganancia ( en pesos): "))
-                nombreP = input("Ingrese el nombre ")
-
-                if precioC <= 0 or Ganancia <= 0:
-                    print("El precio debe ser un número positivo.")
-                else:
-                    break
-            except ValueError:
-                print("Por favor, ingrese un valor numérico válido.")
+        
         Producto["Precio de compra"] = str(precioC)
         Producto["Ganancia"] = str(Ganancia)
         Producto["Nombre"] = str(nombreP)
         print("Item listo para agregar")  
     else:
-      print(
-          "El producto ya existe en el Inventario , ¿Desea modificar el producto?"
-      )
-      print("1. Si")
-
-      print("2. No")
-      if (int(input()) == 1):
-        Cambiar_Producto()
-      else:
-        print("El producto no se agregara al carrito")
-        break
+      return False
     try:
         with open("productos.json", "r", encoding='utf-8') as archivo:
             productos = json.load(archivo)
@@ -106,22 +85,30 @@ def Agregar_Producto():
           # Guardar nuevamente en el archivo
         with open("productos.json", "w", encoding="utf-8") as f:
             json.dump(productos, f, indent=4, ensure_ascii=False)
+            return True
     except FileNotFoundError:
         print("El producto no se agrego al carrito, archivo para guardar  no existe ")
+        return False
     
-    print("Producto agregado")
-    print("¿Desea agregar otro producto?")
-    print("1. Si")
-    print("2. No")
-    Opcion = (int(input("Ingrese una opcion: ")))
-    if (Opcion == 1):
-      Agregar_Producto()
-      break
-    elif Opcion == 2:
-      break
-    else:
-      print("la opcion ingresada no es válida")
-      break
+def Quitar_Producto(producto_a_eliminar):
+    try:
+        with open("productos.json", "r", encoding='utf-8') as archivo:
+            productos = json.load(archivo)
+        for i in range(len(productos)):
+            if productos[i]["Codigo"] == producto_a_eliminar:
+                del productos[i]
+                break
+        else:
+            print("El producto no existe")
+            return False
+        # Guardar nuevamente en el archivo
+        with open("productos.json", "w", encoding="utf-8") as f:
+            json.dump(productos, f, indent=4, ensure_ascii=False)
+            return True
+    except FileNotFoundError:
+        print("El producto no se elimino del carrito, archivo para guardar  no existe ")
+        return False
+    
 
 def analizar_ventas_por_fecha( fecha_inicio_str, fecha_fin_str):
     """
@@ -205,3 +192,4 @@ def analizar_ventas_por_fecha( fecha_inicio_str, fecha_fin_str):
                         resultados_por_fecha[fecha_str]["cantidad_por_producto"].get(nombre_producto, 0) + 1
     
     return resultados_por_fecha
+print(Agregar_Producto(123, 100, 20, "Producto A"))

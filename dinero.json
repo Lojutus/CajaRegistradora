@@ -167,5 +167,104 @@
         ],
         "Total Venta": 190.0,
         "Fecha": "2025-05-20 16:51:00"
+    },
+    {
+        "Ganancia Venta": "40.0",
+        "Productos": [
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            }
+        ],
+        "Total Venta": 400.0,
+        "Fecha": "2025-05-21 10:05:00"
+    },
+    {
+        "Ganancia Venta": "250.0",
+        "Productos": [
+            {
+                "Nombre Producto": "chicle",
+                "Precio de Compra": "90.0",
+                "Ganancia": "10.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            },
+            {
+                "Nombre Producto": "JET",
+                "Precio de Compra": "100.0",
+                "Ganancia": "20.0"
+            }
+        ],
+        "Total Venta": 1540.0,
+        "Fecha": "2025-05-21 12:22:00"
     }
 ]

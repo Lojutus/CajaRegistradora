@@ -80,6 +80,7 @@ def Generar_Ticket():
   try:  
         # Guardar nuevamente en el archivo
         with open("dinero.json", "w", encoding="utf-8") as f:
+            # Guardar el historial de ventas en el archivo JSON
             json.dump(historialVentas, f, indent=4, ensure_ascii=False)
   except FileNotFoundError:
         print("El producto no se agrego al historial, archivo para guardar  no existe ")
